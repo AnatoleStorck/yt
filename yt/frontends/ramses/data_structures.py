@@ -1122,6 +1122,10 @@ class RAMSESDataset(Dataset):
         if not os.path.exists(namelist_file):
             return False
 
+        # The namelists in megatron are malformed, so just skip directly here
+        mylog.info("Skipping reading of `namelist.txt` file for MEGATRON datasets.")
+        return False
+
         try:
             with open(namelist_file) as f:
                 nml = f90nml.read(f)
