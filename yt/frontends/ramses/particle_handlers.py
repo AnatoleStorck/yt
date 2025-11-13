@@ -215,7 +215,7 @@ class DefaultParticleFileHandler(ParticleFileHandler):
         ("particle_velocity_y", "d"),
         ("particle_velocity_z", "d"),
         ("particle_mass", "d"),
-        ("particle_identity", "i"),
+        ("particle_identity", "q"), # Change to double precision for MEGATRON
         ("particle_refinement_level", "i"),
     ]
 
