@@ -104,7 +104,7 @@ class RAMSESFieldInfo(FieldInfoContainer):
         ("z-velocity", (vel_units, ["velocity_z"], None)),
         ("Pres_IR", (pressure_units, ["pres_IR", "pressure_IR"], None)),
         ("Pressure", (pressure_units, ["pressure"], None)),
-        ("Metallicity", ("", ["metallicity"], None)),
+        #("Metallicity", ("", ["metallicity"], None)), # metalicity field in MEGATRON is actually the iron fraction
         ("HII", ("", ["H_p1_fraction"], None)),
         ("HeII", ("", ["He_p1_fraction"], None)),
         ("HeIII", ("", ["He_p2_fraction"], None)),
@@ -426,7 +426,8 @@ class RAMSESFieldInfo(FieldInfoContainer):
         filename = os.path.join(self.ds.directory, f"cooling_{num:05}.out")
 
         if not os.path.exists(filename):
-            mylog.warning("This output has no cooling fields")
+            # mylog.warning("This output has no cooling fields")
+            # In megatron, the cooling fields are written in the hydro files
             return False
 
         # Function to create the cooling fields

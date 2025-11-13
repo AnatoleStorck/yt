@@ -428,7 +428,7 @@ def _read_fluid_file_descriptor(fname: Union[str, "os.PathLike[str]"], *, prefix
         ("velocity_y", "y-velocity"),
         ("velocity_z", "z-velocity"),
         ("pressure", "Pressure"),
-        ("metallicity", "Metallicity"),
+        #("metallicity", "Metallicity"), # metalicity field in MEGATRON is actually the iron fraction
         # Add mapping for ionized species
         # Note: we expect internally that these names use the HII, HeII,
         #       HeIII, ... convention for historical reasons. So we need to map
